@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    [ngClass]="{ chosen: module.id == moduleId }"
+    *ngFor="let module of modules"
+  >
+    <a routerLink="/courses/{{ courseId }}/modules/{{ module.id }}">
+      {{ module.title }}
+    </a>
+  </li>
+</ul>

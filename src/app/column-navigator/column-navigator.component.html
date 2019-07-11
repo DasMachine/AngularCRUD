@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Courses
+      </li>
+      <li
+        (click)="selectCourse(course)"
+        *ngFor="let course of courses"
+        [ngClass]="{ chosen: course == selectedCourse }"
+        class="list-group-item"
+      >
+        {{ course.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Modules
+      </li>
+      <li
+        (click)="selecteModule(module)"
+        *ngFor="let module of selectedCourse.modules"
+        class="list-group-item"
+        [ngClass]="{ chosen: module == selectedModule }"
+      >
+        {{ module.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Lessons
+      </li>
+      <li *ngFor="let lesson of selectedModule.lessons" class="list-group-item">
+        {{ lesson.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Topics
+      </li>
+      <li class="list-group-item">
+        Topic 1
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item active">
+        Widgets
+      </li>
+      <li class="list-group-item">
+        Widget 1
+      </li>
+    </ul>
+  </div>
+</div>
